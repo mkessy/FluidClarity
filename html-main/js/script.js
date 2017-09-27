@@ -88,9 +88,15 @@
   if ($mapholder.length > 0) {
     var map = new GMaps({
       div: '#gmap',
-      lat: -12.043333,
-      lng: -77.028333
+      lat: 41.8889061,
+      lng: -87.8069207
     });
+
+    map.setZoom(17);
+    var iw = {content: 'FluidClarity Ltd.', position: {lat: 41.8889061, lng: -87.8069207}};
+    var marker = map.createMarker({'lat': 41.8889061, 'lng': -87.8069207, iw});
+    
+    map.addMarker({'lat': 41.8889061, 'lng': -87.8069207, 'infoWindow': {content: 'FluidClarity Ltd.'}});
     $mapholder.on('click', function () {
       $(this).children().css("pointer-events", "auto");
     });
